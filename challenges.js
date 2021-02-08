@@ -10,12 +10,18 @@ apply the function to every
 element in the array.
 
 Test cases:
-forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
-------------------*/
 
-function forEach(arr, cb) {
-  // your code here
-}
+// ------------------*/
+
+// function forEach(arr, cb) {
+//   let newArrayNums = [];
+//     for (i of arr){
+//       let mapped = cb(i);
+//       newArrayNums.push(mapped);
+//     }return newArrayNums;
+//   }
+// forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
+
 
 /*------------------
 2)
@@ -32,12 +38,17 @@ function to every element
 of the array passed in as the parameter.
 
 Test cases:
-console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
 ------------------*/
 
-function map(arr, cb) {
-  // your code here
-}
+// function map(arr, cb) {
+//   let newarr = [];
+//   for (let i of arr){
+//     let mappedElem = cb(i);
+//     newarr.push(mappedElem);
+//   } return newarr;
+// } 
+
+// console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
 
 /*------------------
 3)
@@ -53,12 +64,18 @@ the callback function (ie: the callback
 will return true or false for each item).
 
 Test cases:
-console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 ------------------*/
 
-function filter(arr, cb) {
-  // your code here
+function filter(arr, callback) {
+  let tested =[];
+  for (let i of arr){
+    if (callback(i) === true){
+      console.log(i);
+     tested.push(i);  
+    } return tested;
+  }
 }
+console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 
 /*------------------
 4)
@@ -118,6 +135,8 @@ Test case:
 const names = ["Sofia", "Pedro", "Mia"];
 
 // const greetings = // your code here
+
+// let greetings = (names.map(n => `Hello ${n}`));
 
 // console.log(greetings);
 
