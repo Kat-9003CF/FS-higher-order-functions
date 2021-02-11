@@ -66,16 +66,15 @@ will return true or false for each item).
 Test cases:
 ------------------*/
 
-function filter(arr, callback) {
-  let tested =[];
-  for (let i of arr){
-    if (callback(i) === true){
-      console.log(i);
-     tested.push(i);  
-    } return tested;
-  }
-}
-console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
+// function filter(arr, callback) {
+//   let tested =[];
+//   for (let i of arr){
+//     if (callback(i) === true){
+//     tested.push(i);  
+//     } 
+//   } return tested;
+// }
+// console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 
 /*------------------
 4)
@@ -90,16 +89,20 @@ is a test. However, the "every" function
 returns true if EVERY element
 in the passed in array passes that test. 
 Otherwise, it returns false. Try writing it!
+*/
 
-Test cases:
-console.log(every([1, 3, 5], n => n < 6)); // true
-console.log(every([2, 4, 6], n => n < 6)); // false
-console.log(every([2, 4, 6, 2], n => n < 6)); // false
-------------------*/
 
-function every(array, cb) {
-  // your code here.
-}
+// Test cases:
+// console.log(every([1, 3, 5], n => n < 6)); // true
+// console.log(every([2, 4, 6], n => n < 6)); // false
+// console.log(every([2, 4, 6, 2], n => n < 6)); // false
+// // ------------------*/
+
+// function every(array, cb) {
+//   for (let i of array){
+//     return cb(array[i]);
+//   }
+// }
 
 /*------------------
 5)
@@ -114,12 +117,12 @@ in the nums array. Use a fat arrow function.
 The code has been started for you.
 ------------------*/
 
-const nums = [1, 2, 3, 4, 5, 6, 7, 8];
-let sum = 0;
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+// let sum = 0;
 
-nums.forEach((e) => {
-  // your code here
-});
+// nums.forEach((e) => {
+// sum+=e;
+// });
 
 // console.log(sum);
 
@@ -132,9 +135,7 @@ Test case:
 ["Sofia", "Pedro", "Mia"] to ["Hello, Sofia!", "Hello, Pedro!", "Hello, Mia!"]
 ------------------*/
 
-const names = ["Sofia", "Pedro", "Mia"];
-
-// const greetings = // your code here
+// const names = ["Sofia", "Pedro", "Mia"];
 
 // let greetings = (names.map(n => `Hello ${n}`));
 
@@ -149,9 +150,9 @@ Test case:
 ["JavaScript", "Python", "Go"] to ["JavaScript", "Python", "Go"]
 ------------------*/
 
-const langs = ["JavaScript", "Python", "Go"];
+// const langs = ["JavaScript", "Python", "Go"];
 
-// const duplicate = // your code here
+// const duplicate = (langs.map(n => n))
 
 // console.log(duplicate);
 
@@ -169,7 +170,7 @@ const people = [
   { firstname: "Ada", lastname: "Lovelace" },
 ];
 
-// const fullnames = // your code here
+// const fullnames = people.map(n=> `${n.firstname} ${n.lastname}`);
 
 // console.log(fullnames);
 
@@ -190,8 +191,10 @@ Result should be [
 ]
 ------------------*/
 
-// const fullobjects = // your code here
-
+// let fullobjects = people.map(n => {
+//   n["fullname"] = `${n.firstname} ${n.lastname}`
+//   return n;
+// });
 // console.log(fullobjects);
 
 /*------------------
@@ -204,9 +207,9 @@ Test case:
 
 ------------------*/
 
-const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
+// const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
 
-// const areEven = // your code here
+// const areEven = numbers.map(n => (n%2===0));
 
 // console.log(areEven);
 
@@ -220,9 +223,9 @@ Test case:
 
 ------------------*/
 
-const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
+// const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
 
-// const areInPosition = // your code here
+//  const areInPosition = moreNumbers.map((num, ix) => num === ix)
 
 // console.log(areInPosition);
 
@@ -237,8 +240,7 @@ Test case:
 
 const numsList = [1, 34, 83, 65, 3, 24, 98];
 
-// const smallNums = // your code here
-
+// const smallNums = numsList.filter(n => n<=50);
 // console.log(smallNums);
 
 /*------------------
@@ -250,7 +252,7 @@ Test case:
 [1, 34, 83, 65, 3, 24, 98] to [1, 83, 65, 3]
 ------------------*/
 
-// const evenList = // your code here
+// const evenList = numsList.filter(n => (n%2===0));
 
 // console.log(evenList);
 
@@ -263,9 +265,9 @@ Test case:
 [1, 0, 1, 3, 5, 6, 6, 1, 9] to [1, 5, 6, 9]
 ------------------*/
 
-const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
+// const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
 
-// const evenList = // your code here
+// const evenList = moreNums.filter((num,ix) => num >ix)
 
 // console.log(evenList);
 
@@ -287,7 +289,15 @@ Test case:
 ]
 ------------------*/
 
-// const peopleWithA = // your code here
+// const peopleWithA = people.filter(n =>{
+//   for (let i in people){
+//     for (let char in i){
+//       if (char !== "a"){
+//         return;
+//       }return people
+//     }
+//   }
+// })
 
 // console.log(peopleWithA);
 
