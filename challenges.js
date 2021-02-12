@@ -120,9 +120,7 @@ The code has been started for you.
 // const nums = [1, 2, 3, 4, 5, 6, 7, 8];
 // let sum = 0;
 
-// nums.forEach((e) => {
-// sum+=e;
-// });
+// nums.forEach(e => sum+=e);
 
 // console.log(sum);
 
@@ -196,6 +194,7 @@ Result should be [
 //   return n;
 // });
 // console.log(fullobjects);
+
 
 /*------------------
 6.5)
@@ -298,6 +297,23 @@ Test case:
 //       }
 //     } 
 //   })
+// console.log(typeof peopleWithA) //Returns object
+
+
+
+//FROM JACOSTA - Returns an object
+// let peopleWithA = people.filter(person => {
+//   if(person.firstname.includes("a")){
+//     return person;
+//   }
+// })
+
+// console.log(typeof peopleWithA)
+
+// const peopleWithA = people.filter(f => f.firstname.includes("a")) //From Mirka
+// console.log(typeof peopleWithA) //Returns object
+
+
 
 // {
 //   for (let i in people){
@@ -334,6 +350,22 @@ Test case:
 const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
 const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 
+
+// function checkPalindromes(list) {
+//   return list.every(() => {
+//     // add necessary parameters in above
+//     // and finish the code in the body here
+//   });
+// }
+
+function checkPalindromes(list) {
+  return list.every((word) => {
+    if (word === word.split("").reverse().join("")){
+      return word;
+    }
+  });
+}
+
 // function checkPalindromes(list) {
 //   return list.every(()=> {
 //     for (let i of list){
@@ -343,15 +375,15 @@ const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 //  }
 // })
 
-function checkPalindromes(list) {
-  return list.every(n => {
-  for (let ix in list){
-    for (let i of list){
-      ((i === (i.split("").reverse().join(""))))
-     }
-    }
-   } 
-)};
+// function checkPalindromes(list) {
+//   return list.every(n => {
+//   for (let ix in list){
+//     for (let i of list){
+//       ((i === (i.split("").reverse().join(""))))
+//      }
+//     }
+//    } 
+// )};
 
 console.log(checkPalindromes(wordList1));
 console.log(checkPalindromes(wordList2));
@@ -364,10 +396,11 @@ use reduce to add all the items in the
 numsList (from the previous question) together.
 ------------------*/
 
-const total = numsList.reduce(() => {
-  // add necessary parameters in above
-  // and finish the code in the body here
-});
+// const total = numsList.reduce((n) => {
+
+  
+// }
+// });
 
 // console.log(total); // should equal 308
 
@@ -383,8 +416,17 @@ starting at position 0
 Test case:
 [1, 34, 83, 65, 3, 24, 98] to [65,98]
 ------------------*/
+const testList = [1, 34, 83, 65, 3, 24, 98]
 
-// const oddList = // your code here
+// const oddList = testList.filter((num, ix) => {
+// if (((num%2 ===0) && (ix % 2 === 0)) || ((num%2 !==0) && (ix % 2 !== 0))) {
+//   return num;
+// }
+// });
+
+// const oddList = testList.filter((num, ix) => 
+// ((num%2 ===0) && (ix % 2 === 0)) || ((num%2 !==0) && (ix % 2 !== 0))
+// );
 
 // console.log(oddList);
 
@@ -398,10 +440,14 @@ Test case:
 [[20,31,19,18,22],[20,31,16,21,21],[17,31,16,21,21],[18,19,19,20,32]] 
 to [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
 ------------------*/
+let teams = [[20,31,19,18,22],[20,31,16,21,21],[17,31,16,21,21],[18,19,19,20,32]] 
 
-// let olderTeams = // your code here
+let olderTeams = teams.filter(i => {
+  let olderPlayers = i.filter(age =>age > 20);
+  return olderPlayers.length>=3;
+});
 
-// console.log(olderTeams);
+console.log(olderTeams);
 
 /*------------------
 11.2) Perhaps you used the .length property in the previous exercise.
