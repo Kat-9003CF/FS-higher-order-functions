@@ -289,13 +289,23 @@ Test case:
 ]
 ------------------*/
 
-// const peopleWithA = people.filter(n =>{
+// let peopleWithA = people.filter(n => 
+//   {
+//     for (let i in n.firstname){
+//     a = n.firstname.search("a");
+//       if (a!==-1){
+//         return n.firstname;
+//       }
+//     } 
+//   })
+
+// {
 //   for (let i in people){
 //     for (let char in i){
-//       if (char !== "a"){
-//         return;
-//       }return people
-//     }
+//       if (char === "a"){
+//         peopleWithA[n] = null; //don't map this element
+//       }
+//     } 
 //   }
 // })
 
@@ -324,15 +334,27 @@ Test case:
 const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
 const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 
-function checkPalindromes(list) {
-  return list.every(() => {
-    // add necessary parameters in above
-    // and finish the code in the body here
-  });
-}
+// function checkPalindromes(list) {
+//   return list.every(()=> {
+//     for (let i of list){
+//       if (i === i.reverse());
+//       return i;// add necessary parameters in above
+//   }
+//  }
+// })
 
-// console.log(checkPalindromes(wordList1));
-// console.log(checkPalindromes(wordList2));
+function checkPalindromes(list) {
+  return list.every(n => {
+  for (let ix in list){
+    for (let i of list){
+      ((i === (i.split("").reverse().join(""))))
+     }
+    }
+   } 
+)};
+
+console.log(checkPalindromes(wordList1));
+console.log(checkPalindromes(wordList2));
 
 /*------------------
 9)
